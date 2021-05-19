@@ -1,0 +1,22 @@
+{
+    "model": {
+        "model_name": "mnist_demo",
+        "model": "mnist-8.xml",
+        "weights": "mnist-8.bin"
+    },
+    "engine": {
+        "config": "mnist.yml"
+    },
+    "compression": {
+        "target_device": "CPU",
+        "algorithms": [
+            {
+                "name": "DefaultQuantization",
+                "params": {
+                    "stat_subset_size": 300,
+                    "preset": "performance"
+                }
+            }
+        ]
+    }
+}
