@@ -8,14 +8,14 @@ models:
         adapter: classification
     datasets:
       - name: MNIST_CSV
-        data_source: Mnist_CSV/images
-        annotation: Mnist_CSV/accuracy_checker_annotations/full/mnist_csv.pickle
-        dataset_meta: Mnist_CSV/accuracy_checker_annotations/full/mnist_csv.json
+        data_source: images
+        annotation: mnist_csv.pickle
+        dataset_meta: mnist_csv.json
         annotation_conversion:
             converter: mnist_csv
             annotation_file: mnist_test.csv
             convert_images: True
-            converted_images_dir: Mnist_CSV/images
+            converted_images_dir: images
 
         preprocessing:
           - type: bgr_to_gray
