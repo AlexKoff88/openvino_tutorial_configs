@@ -1,0 +1,1 @@
+# openvino_tutorial_configs
