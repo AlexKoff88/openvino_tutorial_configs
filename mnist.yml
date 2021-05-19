@@ -2,6 +2,9 @@ models:
   - name: model
     launchers:
       - framework: dlsdk
+        device: CPU
+        model:  mnist-8.xml
+        weights: mnist-8.bin
         adapter: classification
     datasets:
       - name: MNIST_CSV
