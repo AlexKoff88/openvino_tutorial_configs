@@ -1,0 +1,25 @@
+models:
+  - name: model
+    launchers:
+      - framework: dlsdk
+        adapter: classification
+    datasets:
+      - name: MNIST_CSV
+        data_source: Mnist_CSV/images
+        annotation: Mnist_CSV/accuracy_checker_annotations/full/mnist_csv.pickle
+        dataset_meta: Mnist_CSV/accuracy_checker_annotations/full/mnist_csv.json
+        annotation_conversion:
+            converter: mnist_csv
+            annotation_file: mnist_test.csv
+            convert_images: True
+            converted_images_dir: Mnist_CSV/images
+
+        preprocessing:
+          - type: bgr_to_gray
+        metrics:
+          - name: top1
+            type: accuracy
+            top_k: 1
+          - name: top5
+            type: accuracy
+            top_k: 5
